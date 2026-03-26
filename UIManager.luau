@@ -58,10 +58,7 @@ function UIManager:Act(state: string)
 		local mouseEnterConn = self.root.MouseEnter:Connect(function()
 			local hoverTween = TweenService:Create(self.root, TWEEN_CONFIGS.Hover, hoverProps)
 			hoverTween:Play()
-			if self.root.Name:match("sunburst") then
-				local rotationTween = TweenService:Create(self.root, TWEEN_CONFIGS.Rotate, {Rotation = 180})
-				rotationTween:Play()
-			end
+			
 		end)
 		
 		table.insert(self.connections, mouseEnterConn)
@@ -69,10 +66,6 @@ function UIManager:Act(state: string)
 		local mouseLeaveConn = self.root.MouseLeave:Connect(function()
 			local hoverResetTween = TweenService:Create(self.root, TWEEN_CONFIGS.Hover, self.originalProps)
 			hoverResetTween:Play()
-			if self.root.Name:match("sunburst") then
-				local rotationResetTween = TweenService:Create(self.root, TWEEN_CONFIGS.Rotate, {Rotation = 0})
-				rotationResetTween:Play()
-			end
 		end)
 		
 		table.insert(self.connections, mouseLeaveConn)
@@ -88,7 +81,6 @@ function UIManager:Act(state: string)
 				local returnTween = TweenService:Create(self.root, TWEEN_CONFIGS.Click, {Size = originalSize})
 				returnTween:Play()
 			end)
-			
 			
 		end)
 		
