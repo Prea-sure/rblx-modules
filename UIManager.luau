@@ -29,7 +29,7 @@ type GUI: {
 
 
 
-export type UIManager = setmetatable<GUI, typeof(UIManager)> -- New type solver.
+export type UIManager = setmetatable<GUI, typeof(UIManager)> -- New type solver, equivalent to: export type UIManager = typeof(setmetatable({} :: GUI, UIManager))
 
 
 function UIManager.Assign(root): UIManager
