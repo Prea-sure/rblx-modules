@@ -21,7 +21,7 @@ UIManager.__index = UIManager
 
 type properties = {[string]: any}
 
-type GUI: {
+type GUI = {
     root: GuiObject?,
     properties: properties,
     connections: table
